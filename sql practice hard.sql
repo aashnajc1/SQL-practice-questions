@@ -12,7 +12,7 @@ else 0
 end) as isObese
 from patients;
 
-/* Show patient_id, first_name, last_name, and attending physician's specialty. Show only the patients who has a diagnosis as 'Epilepsy' 
+/* 3)Show patient_id, first_name, last_name, and attending physician's specialty. Show only the patients who has a diagnosis as 'Epilepsy' 
 and the physician's first name is 'Lisa'. */
 select p.patient_id,
 p.first_name as patient_first_name,
@@ -22,3 +22,6 @@ from patients p
 join admissions a on a.patient_id = p.patient_id
 join physicians ph on ph.physician_id = a.attending_physician_id
 where diagnosis = 'Epilepsy' and ph.first_name = 'Lisa';
+
+/* 4) Each admission costs $50 for patients without insurance, and $10 for patients with insurance. All patients with an even patient_id have insurance.
+Give each patient a 'Yes' if they have insurance, and a 'No' if they don't have insurance. Add up the admission_total cost for each has_insurance group. */
