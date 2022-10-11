@@ -33,6 +33,14 @@ else
 end as has_insurance,
 sum(case when patient_id%2 = 0 then 
     10
+    
+/* 5) We are looking for a specific patient. Pull all columns for the patient who matches the following criteria:
+- First_name contains an 'r' after the first two letters.
+- Identifies their gender as 'F'
+- Born in February, May, or December
+- Their weight would be between 60kg and 80kg
+- Their patient_id is an odd number
+- They are from the city 'Kingston' 
 else
     50
 end) as cost_after_insurance
