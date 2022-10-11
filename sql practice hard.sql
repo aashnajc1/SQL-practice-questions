@@ -34,7 +34,15 @@ end as has_insurance,
 sum(case when patient_id%2 = 0 then 
     10
     
-/* 5) We are looking for a specific patient. Pull all columns for the patient who matches the following criteria:
+/* 5) Show the provinces that has more patients identified as 'M' than 'F'. Must only show full province_name */
+SELECT pr.province_name
+FROM patients AS pa
+  JOIN province_names AS pr ON pa.province_id = pr.province_id
+GROUP BY pr.province_name
+HAVING
+  COUNT( CASE WHEN gender = 'M' THEN 1 END) > COUNT( CASE WHEN gender = 'F' THEN 1 END);
+
+    /* 6) We are looking for a specific patient. Pull all columns for the patient who matches the following criteria:
 - First_name contains an 'r' after the first two letters.
 - Identifies their gender as 'F'
 - Born in February, May, or December
@@ -45,12 +53,4 @@ else
     50
 end) as cost_after_insurance
 from admissions
-group by has_insurance;
-
-/* 5) Show the provinces that has more patients identified as 'M' than 'F'. Must only show full province_name */
-SELECT pr.province_name
-FROM patients AS pa
-  JOIN province_names AS pr ON pa.province_id = pr.province_id
-GROUP BY pr.province_name
-HAVING
-  COUNT( CASE WHEN gender = 'M' THEN 1 END) > COUNT( CASE WHEN gender = 'F' THEN 1 END);
+group by has_insurance;*/ 
