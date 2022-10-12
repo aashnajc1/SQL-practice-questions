@@ -64,4 +64,4 @@ WHERE
   AND patient_id % 2 = 1
   AND city = 'Kingston';
 
- /* 7) */
+ /* 7) Show the percent of patients that have 'M' as their gender. Round the answer to the nearest hundreth number and in percent form. */
