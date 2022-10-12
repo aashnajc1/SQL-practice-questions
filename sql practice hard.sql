@@ -63,3 +63,5 @@ WHERE
   AND weight BETWEEN 60 AND 80
   AND patient_id % 2 = 1
   AND city = 'Kingston';
+
+ /* 7) */
