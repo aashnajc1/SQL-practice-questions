@@ -77,3 +77,5 @@ WHERE
     '%'
   ) as percent_of_male_patients
 FROM patients;
+
+/* 8) For each day display the total amount of admissions on that day. Display the amount changed from the previous date. */
