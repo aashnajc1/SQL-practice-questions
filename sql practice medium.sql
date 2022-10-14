@@ -85,3 +85,7 @@ ph.physician_id = a.attending_physician_id group by physician_id;
 select province_name ,count(*) as patient_count from patients pa join province_names pr 
 on pa.province_id = pr.province_id group by  province_name 
 order by patient_count desc;
+
+/* 21) We want to display each patient's full name in a single column. 
+Their last_name in all upper letters must appear first, then first_name in all lower case letters.
+Separate the last_name and first_name with a comma. Order the list by the first_name in decending order */
